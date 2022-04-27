@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+//// o(n^2)
+class SelectionSort {
+    //selection sort function
+    void selectionSort(int arr[]) {
+        int size = arr.length;
+        for (int j = 0; j < size - 1; j++) {
+            int min = j;
+            for (int i = j + 1; i < size; i++) {
+                if(arr[i]<arr[min])
+                    min = i;
+            }
+            int tmp = arr[j];
+            arr[j] = arr[min];
+            arr[min] = tmp;
+        }
+    }
+    // method for printing the elements
+    void display(int arr[]) {
+        int size = arr.length;
+        for (int i = 0; i < size; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+    public static void main(String args[]) {
+    Scanner s= new Scanner(System.in);
+        System.out.println("enter the length of array: ");
+        int n=s.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = s.nextInt();
+        }
+        SelectionSort ss = new SelectionSort();
+        System.out.println("Elements before sorting: ");
+        ss.display(arr);
+        ss.selectionSort(arr);
+        System.out.println("\nElements after sorting: ");
+        ss.display(arr);
+    }
+}

@@ -1,0 +1,25 @@
+interface AnimalEat {
+    void eat();
+}
+interface AnimalT {
+    void t();
+}
+class Animal implements AnimalEat,AnimalT{
+
+    @Override
+    public void eat() {
+        System.out.println("Animal");
+    }
+
+    @Override
+    public void t() {
+        System.out.println("Animal is travelling");
+
+    }
+
+    public static void main(String[] args) {
+        Animal a = new Animal();
+        a.eat();
+        a.t();
+    }
+}

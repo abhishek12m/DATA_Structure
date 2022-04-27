@@ -1,0 +1,20 @@
+package Session1;
+
+public class Solution {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n=1234;
+		int a=n/10;
+		int[] ar= new int[5];
+		for (int i=0;i<4;i++) {
+			ar[i]=a;
+		}
+		for (int i=0;i<4;i++) {
+			System.out.print(ar[i]);
+
+		}
+		
+	}
+
+}

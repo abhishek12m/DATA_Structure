@@ -1,0 +1,52 @@
+//dicl of data
+public class SinglyLinkedList {
+    private ListNode head;
+
+    private static class ListNode {
+        private int data;
+        private ListNode next;
+
+        //consturcting a constructer
+        public ListNode(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+    public void insertFirst(int value){
+        ListNode newNode = new ListNode(value);
+        newNode.next=head;
+        head=newNode;
+    }
+    public void display() {
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.data + "->");
+            current = current.next;
+        }
+        System.out.print("null");
+    }
+    public void LengthCount(){
+        if (head==null){
+            System.out.println("null");
+        }
+        int count=0;
+        ListNode current = head;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        System.out.println("\nLength of LinkedList :" +count);
+    }
+    public static void main(String[] args) {
+        SinglyLinkedList singlyLinkedList= new SinglyLinkedList();
+        singlyLinkedList.head=new ListNode(10);
+        ListNode second = new ListNode(8);
+        ListNode third = new ListNode(11);
+        ListNode fourth = new ListNode(1);
+        singlyLinkedList.head.next=second; // 10->1
+        second.next=third; // 10->1->8
+        third.next=fourth; // 10->8->11->1->null
+        singlyLinkedList.display();
+        singlyLinkedList.LengthCount();
+    }
+}

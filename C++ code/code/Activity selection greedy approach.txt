@@ -1,0 +1,23 @@
+#include <bits/stdc++.h> 
+using namespace std; 
+bool compare(const pair<int, int>&i, const pair<int, int>&j){
+    return i.second < j.second;
+}
+int main(){
+    int len = 8; 
+    pair<int, int> intervals[] = {{10, 12}, {2, 3}, {9, 10}, {11, 15}, {6, 8}, {8, 10}, {12, 13}, {14, 16}};  set<int> activities; 
+    sort(intervals, intervals + len, compare); 
+    for (int i = 0; i < len; i++)
+        cout << intervals[i].first << " - " << intervals[i].second << "\n"; 
+    activities.insert(1); 
+    int lastActivity = 1; 
+    for (int currentActivity = 2; currentActivity <= len; currentActivity++) {
+        if (intervals[currentActivity - 1].first >= intervals[lastActivity - 1].second) {
+            activities.insert(currentActivity); 
+            lastActivity = currentActivity;
+        }
+    }
+    for (int activity: activities)
+        cout << activity << " "; 
+    return 0;
+}

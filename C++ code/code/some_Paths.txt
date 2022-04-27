@@ -1,0 +1,8 @@
+C:\spark-3.1.2-bin-hadoop3.2
+C:\spark-3.1.2-bin-hadoop3.2\bin
+
+C:\Program Files\Java\jdk1.8.0_301
+C:\Program Files\Java\jdk1.8.0_301\bin
+
+C:\Users\abhi\AppData\Local\Programs\Python
+C:\Users\abhi\AppData\Local\Programs\Python\Python39\Scripts

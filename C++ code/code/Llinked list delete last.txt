@@ -1,0 +1,80 @@
+//dicl of data
+public class SinglyLinkedList {
+    private ListNode head;
+
+    private static class ListNode {
+        private int data;
+        private ListNode next;
+
+        //consturcting a constructer
+        public ListNode(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+    public  ListNode deleteLast(){
+        if (head==null || head.next==null){
+            return head;
+        }
+        ListNode current = head;
+        ListNode previous = null;
+        while (current.next!=null){
+            previous=current;
+            current=current.next;
+        }
+        previous.next=null;
+        return current;
+    }
+    public ListNode deleteFirst(){
+        if (head==null){
+            return null;
+        }
+        ListNode temp = head;
+        head = head.next;
+        temp.next=null;
+        return temp;
+    }
+    public void insertAtEnd(int value){
+        ListNode newNode = new ListNode(value);
+        if (head==null){
+            head= newNode; return;
+        }
+        ListNode current=head;
+        while (current.next!=null){
+            current=current.next;
+        }
+        current.next=newNode;
+    }
+    public void display() {
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.data + "->");
+            current = current.next;
+        }
+        System.out.print("null\n");
+    }
+    public void LengthCount(){
+        if (head==null){
+            System.out.println("null");
+        }
+        int count=0;
+        ListNode current = head;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        System.out.println("\nLength of LinkedList :" +count);
+    }
+    public static void main(String[] args) {
+        SinglyLinkedList singlyLinkedList= new SinglyLinkedList();
+        singlyLinkedList.insertAtEnd(1);
+        singlyLinkedList.insertAtEnd(2);
+        singlyLinkedList.insertAtEnd(3);
+        singlyLinkedList.display();
+        singlyLinkedList.deleteFirst();
+        singlyLinkedList.display();
+        singlyLinkedList.deleteLast();
+        singlyLinkedList.LengthCount();
+        singlyLinkedList.display();
+    }
+}

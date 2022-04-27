@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+
+class Solution {
+    public static void main(String[] args) {
+        ArrayList<Integer> integers = new ArrayList<>();
+        integers.add(45);
+        Integer obj = Integer.valueOf(33);
+        integers.add(obj);
+        integers.add(234);
+        integers.add(236);
+        integers.add(238);
+        integers.add(239);
+        integers.add(237);
+        integers.add(238);
+        integers.add(237);
+        integers.add(236);
+        integers.add(234);
+        integers.add(230);
+        integers.add(230);
+        integers.add(230);
+        integers.add(230);
+        integers.add(230);
+        integers.add(230);
+        integers.add(230);
+
+        System.out.println("Printing arraylist :");
+        System.out.println(integers);
+        int size = integers.size();
+        System.out.println("size :" + size);
+        System.out.println(integers.indexOf(237));
+        System.out.println(integers.lastIndexOf(237));
+        int no = integers.get(15);
+        System.out.println(no);
+    }
+}

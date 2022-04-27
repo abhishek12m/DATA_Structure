@@ -1,0 +1,154 @@
+package Tree;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class BinaryTree {
+	private class TreeNode{
+		int data;
+		TreeNode left;
+		TreeNode right;
+		private TreeNode(int data){
+			this.data=data;
+		}
+		
+	}
+	private Scanner sc=new Scanner(System.in);
+	
+	private TreeNode root;
+	public BinaryTree() {
+		//root=constructTree();
+		root=constLevel();
+		
+	}
+	private TreeNode constructTree() {
+		int val=sc.nextInt();
+		if(val==-1) {
+			return null ;
+		}
+		TreeNode nn=new TreeNode(val);
+		nn.left=constructTree();
+		nn.right=constructTree();
+		return nn;
+		
+	}
+	private TreeNode constLevel() {
+		int val=sc.nextInt();
+		Queue<TreeNode> q=new LinkedList<>();
+		TreeNode nn=new TreeNode(val);
+		this.root=nn;
+		q.add(nn);
+		while(!q.isEmpty()) {
+			TreeNode rv=q.remove();
+			int c1=sc.nextInt();
+			int c2=sc.nextInt();
+			if(c1!=-1) {
+				TreeNode nl=new TreeNode(c1);
+				rv.left=nl;
+				q.add(nl);
+			}
+			if(c2!=-1) {
+				TreeNode nr=new TreeNode(c2);
+				rv.left=nr;
+				q.add(nr);
+			}
+			
+		}
+		return root;
+		
+		
+	}
+	
+	public void preOrder() {
+		preOrder(root);
+	}
+	private void preOrder(TreeNode root) {
+		if(root==null) {
+			//System.out.print(-1+" ");
+			return;
+		}
+		System.out.print(root.data+" ");
+		preOrder(root.left);
+		preOrder(root.right);
+	}
+	public void inOrder() {
+		inOrder(root);
+	}
+	private void inOrder(TreeNode root) {
+		if(root==null) {
+			//System.out.print(-1+" ");
+			return;
+		}
+		inOrder(root.left);
+		System.out.print(root.data+" ");
+		inOrder(root.right);
+	}
+	public void postOrder() {
+		postOrder(root);
+	}
+	private void postOrder(TreeNode root) {
+		if(root==null) {
+			//System.out.print(-1+" ");
+			return;
+		}
+		postOrder(root.left);
+		postOrder(root.right);
+		System.out.print(root.data+" ");
+	}
+	public boolean find(int item) {
+		return finds(root,item);
+	}
+	private boolean finds(TreeNode root,int item) {
+		if(root==null) {
+			return false;
+		}
+		if(root.data==item) {
+			return true;
+		}
+		return finds(root.left,item) || finds(root.right,item);
+	}
+	public void Level_Order() {
+		level_Order(root);
+	}
+	private void level_Order(TreeNode root) {
+		Queue<TreeNode> q=new LinkedList<>();
+		q.add(root);
+		while(!q.isEmpty()) {
+			TreeNode nn=q.remove();
+			System.out.print(nn.data);
+			if(nn.left!=null) {
+				q.add(nn.left);
+			}
+			if(nn.right!=null) {
+				q.add(nn.right);
+			}
+			
+		}
+		System.out.println();
+	}
+	public void Level_Order_Line_Wise() {
+		level_Order_Line_Wise(root);
+	}
+	private void level_Order_Line_Wise(TreeNode root) {
+		Queue<TreeNode> q=new LinkedList<>();
+		Queue<TreeNode> helper=new LinkedList<>();
+		q.add(root);
+		while(!q.isEmpty()) {
+			TreeNode nn=q.remove();
+			System.out.print(nn.data+" ");
+			if(nn.left!=null) {
+				helper.add(nn.left);
+			}
+			if(nn.right!=null) {
+				helper.add(nn.right);
+			}
+			if(q.isEmpty()) {
+				q=helper;
+				helper=new LinkedList<>();
+				System.out.println();
+			}
+		}
+	}
+	
+}

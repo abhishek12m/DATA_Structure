@@ -1,0 +1,28 @@
+//class setPriority extends Thread
+//{
+//    public  void run(){
+//        System.out.println("The priority of Thread :" +Thread.currentThread().getPriority());
+//    }
+//
+//    public static void main(String[] args) {
+//        setPriority p = new setPriority();
+//        p.setPriority(Thread.NORM_PRIORITY);
+//        p.start();
+//    }
+//}
+class setPriority extends Thread
+{
+    public  void run(){
+        System.out.println("running");
+    }
+
+    public static void main(String[] args) {
+        setPriority p1 = new setPriority();
+        setPriority p2 = new setPriority();
+        p1.setPriority(4);
+        p2.setPriority(7);
+        System.out.println("Priority of the thread :" +p1.getPriority());
+        System.out.println("Priority of the thread :" +p2.getPriority());
+        p1.start();
+    }
+}

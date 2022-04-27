@@ -1,0 +1,81 @@
+public class SingleDimentionArray {
+    int arr[];//Declaration
+
+    //constructor
+    public SingleDimentionArray(int arraysize){
+        arr=new int[arraysize];//creation of the array
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = Integer.MIN_VALUE;
+        }
+    }
+    //method to traverse the array
+    public void traverse(){
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+    // method to insert the value in the array
+    public void insert(int position,int value){
+        try
+        {
+            if (arr[position]==Integer.MIN_VALUE){
+                arr[position]=value;
+            }
+            else {
+                System.out.println("Position already filled");
+            }
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Invalid position you entered");
+        }
+    }
+    // method to access a particular index value
+    public void indexValue(int index){
+        try
+        {
+            {
+                System.out.println(arr[index]);
+            }
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Invalid index");
+        }
+    }
+    // method to search a value in the array
+    public void search(int searchvalue){
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i]==searchvalue){
+                System.out.println("value found "+ i +" "+arr[i]);
+                break;
+            }
+        }
+        System.out.println("value not found");
+    }
+    // method to delete a value from the array
+    public void deleteValue(int deleteindex){
+        try
+        {
+            arr[deleteindex]=Integer.MIN_VALUE;
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("Invalid index which is out of range");
+        }
+    }
+    public void deleteArray(){
+        arr=null;
+        System.out.println("deleted array");
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        SingleDimentionArray obj = new SingleDimentionArray(5);
+        obj.traverse();
+        System.out.println("After traversing");
+        obj.insert(3,81);
+        obj.indexValue(3);
+        obj.search(81);
+        obj.deleteValue(3);
+        obj.deleteArray();
+        //obj.traverse();
+    }
+}

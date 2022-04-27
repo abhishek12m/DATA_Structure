@@ -1,0 +1,85 @@
+WHAT IS .............
+Recipe hub where a user can:
+* add new recipes
+* veiw recipes
+* reveiw and feedback or comment or rate recipes
+* favurite/like some recipes
+
+REASONS FOR CHOOSING THIS PROJECT:
+* The features looked interesting and relatable.
+* Few aspects of it looked challenging enough.
+* The other features looked practically achievable.
+Our mission is to be the smartest
+and most helpful food platform
+in existence
+We help people discover what to eat based on personal preferences and data
+Our system of personalized discovery learns you better to serve you better, so the question "what's for dinner?" is answered before it's even asked.
+
+TECHNOLOGY USED:
+* HyperText Markup Language (HTML) is the set of markup symbols or
+  codes inserted into a file intended for display on the Internet.
+  The markup tells web browsers how to display a web page's
+  documents with headings, text, tables, lists, photos, and images etc.
+  
+* CSS stands for Cascading Style Sheets.
+  It is the language for describing the presentation of Web pages, including colours, layout, and fonts,
+  thus making our web pages presentable to the users.
+  It is independent of HTML and can be used with any XML-based markup language.
+
+* JavaScript is a cross-platform, object-oriented scripting language used to make webpages interactive
+  (e.g., having complex animations, clickable buttons, popup menus, etc.).
+* Bootstrap and CSS3 to build the UI of the application. Bootstrap is very useful in saving up time as it has many components ready for use and very extensive documentation.
+  Node.js is a server-side platform built on google chrome’s javascript V8 engine for easily building fast and scalable network applications. Express.js is a web application framework for Node.js.
+
+* We have used MongoDB as the database. It is extremely simple to install and implement. MongoDB uses JSON or BSON documents to store data.
+  Finally, we have used Heroku to deploy our application.
+
+CHALLENGES FACED:
+* Structuring the database correctly was bit of a challenge,
+  redundant collections were logically getting created or linking one
+  collection to another was logically not possible.
+
+* Implementation cloudinary and multer was new and slightly difficult.
+
+FUTURE SCOPE:
+* The application could be more interactive and intuitive.
+* Implementaion a global search bar with filters like difficulty level,cuisine etc.
+* I would like to add social media sharing buttons and singning up with social media account.
+
+Our mission is to be the smartest
+and most helpful food platform
+in existence
+
+We help people discover what to eat based on personal preferences and data
+
+Our system of personalized discovery learns you better to serve you better, so the question "what's for dinner?" is answered before it's even asked.
+
+We are building big data for food
+
+We are building big data for food
+..........'s proprietary Food Genome and patent-pending Food Intelligence technology allow us to understand recipes at a deeper level, and recommend recipes to our users based on their diets, allergies, tastes, and more.
+
+y allows you to browse beautifully photographed and easy-to-fo...... allow recipes and save them to your own digital cookbook."
+
+Food is a very integral part of all our lives. It is a composite mixture of various ingredients which is consumed for nutrition. Nutrition refers to the process in which the food consumed is utilized by the human body for nourishment and strength.
+
+We all have an opinion on what constitutes the best food for nourishment and why but we are not always sure what to cook, how to cook, when to cook, how much to cook? and that is where ....... looks to provide that assistance in making that decision a tad easier.
+
+Here are some of the key features of Slurrp:
+
+Food discovery
+...... aims to help discover food recipes using a combination of cuisines, diets, food dislikes, meal schedule and other aspects such as the daily calorie requirement.
+
+Macro and Micro-nutrients information
+
+Break down of the nutritional value of recipes, thereby allowing users to understand the number of calories being consumed along with the nutritional value present in the recipe.
+
+Nutrimeter - find your recommended calorie intake
+
+Nutrimeter is a slurrp feature that takes into consideration the meal schedule and the suggested daily calorie intake to provide recipe recommendations that meet the energy requirement.
+
+Meal planning, Shopping List, Recipe collection
+
+........... additional features include the meal planner which is a guide to help you decide what to cook and when to cook; Shopping list of ingredients to buy on the next grocery run; Save recipes that you have liked to your collection for quick access.
+
+The front page always has the newest, latest recipe on top.

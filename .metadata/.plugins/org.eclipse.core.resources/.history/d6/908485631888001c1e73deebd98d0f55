@@ -1,0 +1,32 @@
+package Session1;
+
+import java.util.Arrays;
+
+public class Solution {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n=1234;
+		
+		int[] ar= new int[4];
+		int[] ab= new int[4];
+		for (int i=0;i<4;i++) {
+			int a=n%10;
+			n=n/10;
+			ar[i]=a;
+			ab[i]=a;
+		}
+		int[] aba= new int[4];
+		Arrays.sort(ar);
+		for (int i=0;i<4;i++) {
+			for (int j=0;j<4;j++) {
+				aba[i]=ar[i]-ab[j];
+			}
+			System.out.print(aba[i]);
+			//System.out.print(ab[i]);
+
+		}
+		
+	}
+
+}

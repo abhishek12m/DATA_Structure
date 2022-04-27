@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int len = 4;
+    int ksize = 60;
+    int p[len] = {280, 100, 120, 120}; 
+    int w[len] = {40, 10, 20, 24};
+    for (int j = len - 1; j > 0; j--) {
+        for (int i = 0; i < len - 1; i++) {
+            if (p[i]/w[i] < p[i+1]/w[i+1]) {
+                int temp;
+                temp = p[i];
+                p[i] = p[i+1];
+                p[i+1] = temp;
+                temp = w[i];
+                w[i] = w[i+1];
+                w[i+1] = temp;
+            }
+        }
+    }
+    for (int i = 0; i < len; i++) cout << p[i] << " ";
+    cout << "\n";
+    for (int i = 0; i < len; i++) cout << w[i] << " ";
+    cout << "\n";
+    
+    float x[len];
+    for (int i = 0; i < len; i++) x[i] = 0;
+    int remainingSize = ksize;
+    int i = 0;
+    for (i = 0; i < len; i++) {
+        if (w[i] > remainingSize) break;
+        x[i] = 1.0;
+        remainingSize -= w[i];
+    }
+    if (i <= len) x[i] = (remainingSize * 1.0) / w[i];
+    float profit = 0;
+    for (int i = 0; i < len; i++) profit += (x[i] * p[i]);
+    cout << profit;
+	return 0;
+}

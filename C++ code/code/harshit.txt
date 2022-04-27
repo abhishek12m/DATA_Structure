@@ -1,0 +1,157 @@
+//1-1. Create a List & Set of 10 integers and demonstrate ordered and unordered collection as well
+//as duplicate allowed and not allowed. Demonstrate addAll() method also.
+
+import java.util.ArrayList;
+import java.util.Comparator;
+
+//class Scratch {
+//    public static void main(String[] args) {
+//        ArrayList<Integer> arrayList = new ArrayList<>();
+//        for (int i = 0; i < 10; i++) {
+//            arrayList.add(i);
+//        }
+//        System.out.println(arrayList.get(19));
+//    }
+//}
+//Question ---Create a List of 10 Book objects, where Book is a user defined or custom class. Book class contains
+//following field String bookName, String author, long isbn, & double price. Book class must be properly
+//        encapsulated and must implement data hiding. Book class contains parameterized constructors and noargument constructor. Book class must override String toString() of Object class to represent Book
+//        object as string while printing. Kindly sort the list of book by price.
+
+//class Book{
+//    private String bookName,author;
+//    private long isbn;
+//    private double price;
+//
+//    Book(){
+//
+//    }
+//
+//    public Book(String bookName, String author, long isbn, double price) {
+//        this.bookName = bookName;
+//        this.author = author;
+//        this.isbn = isbn;
+//        this.price = price;
+//    }
+//
+//    public String getBookName() {
+//        return bookName;
+//    }
+//
+//    public void setBookName(String bookName) {
+//        this.bookName = bookName;
+//    }
+//
+//    public String getAuthor() {
+//        return author;
+//    }
+//
+//    public void setAuthor(String author) {
+//        this.author = author;
+//    }
+//
+//    public long getIsbn() {
+//        return isbn;
+//    }
+//
+//    public void setIsbn(long isbn) {
+//        this.isbn = isbn;
+//    }
+//
+//    public double getPrice() {
+//        return price;
+//    }
+//
+//    public void setPrice(double price) {
+//        this.price = price;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Book{" +
+//                "bookName='" + bookName + '\'' +
+//                ", author='" + author + '\'' +
+//                ", isbn=" + isbn +
+//                ", price=" + price +
+//                '}';
+//    }
+//}
+//
+//class BookComparator implements Comparator<Book>{
+//    @Override
+//    public int compare(Book o1, Book o2) {
+//        return Double.compare(o1.getPrice(), o2.getPrice());
+//    }
+//}
+//
+//
+//class Main{
+//    public static void main(String[] args) {
+//        ArrayList<Book> list = new ArrayList<>();
+//        list.add(new Book("C++", "Cumita" , 121, 45.6));
+//        list.add(new Book("P++", "Pumita" , 123, 4.6));
+//        list.add(new Book("J++", "Jumita" , 123, 453.613));
+//        list.add(new Book("K++", "Kumita" , 123, 24.6));
+//        list.sort(new BookComparator());
+//        System.out.println(list);
+//    }
+//}
+class Student{
+    private int rollNo;
+    private String name;
+    private double cpi;
+
+    public Student(int rollNo, String name, double cpi) {
+        this.rollNo = rollNo;
+        this.name = name;
+        this.cpi = cpi;
+    }
+
+    public double getCpi() {
+        return cpi;
+    }
+
+    public void setCpi(double cpi) {
+        this.cpi = cpi;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setRollNo(int rollNo) {
+        this.rollNo = rollNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getRollNo() {
+        return rollNo;
+    }
+    @Override
+    public String toString(){
+        return "Student { " + " Student Name -> " + name +" " + "Student RollNO -> " + rollNo + " " + "CPI -> "+cpi +"}\n";
+    }
+
+}
+class StudentComparator implements Comparator<Student>{
+    @Override
+    public int compare(Student s1, Student s2){
+        return CharSequence.compare(s1.getName(),s2.getName());
+
+    }
+}
+class Main{
+    public static void main(String[] args) {
+        ArrayList<Student> S = new ArrayList<>();
+        S.add(new Student(1, "Harshit Kumar Singh",8.2));
+        S.add(new Student(2, "Aman Kumar Singh",8.2));
+        S.add(new Student(3, "Nikhil Kumar Singh",8.2));
+        S.sort(new StudentComparator());
+//        S.remove(2);
+        S.removeIf(x -> { return x.getName().startsWith("T") || x.getName().startsWith("A") ; });
+        System.out.println(S);
+    }
+}

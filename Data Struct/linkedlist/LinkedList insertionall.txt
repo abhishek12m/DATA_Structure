@@ -1,0 +1,90 @@
+public class LinkedList{
+    Node head;
+    class Node{
+        int data;
+        Node next;
+        Node(int d){
+            data=d;
+            next=null;
+        }
+    }
+    public void insertAtFront(int data){
+        Node  new_node= new Node(data);
+        new_node.next=head;
+        head=new_node;
+    }
+    public void insertAtEnd(int data){
+        Node node= new Node(data);
+        if (head==null){
+            head=node;
+            node.next=null;
+            return;
+        }
+        Node current=head;
+        while(current.next!=null){
+            current=current.next;
+        }
+        current.next=node;
+        return;
+    }
+    public void insertAtPosition(int position,int data){
+        Node node= new Node(data);
+        if (position==1){
+            node.next=head;
+            head=node;
+            return;
+        }
+        else {
+            Node previous =head;
+            int count=1;
+            while (count<position-1){
+                previous=previous.next;
+                count++;
+            }
+            Node current = previous.next;
+            previous.next=node;
+            node.next=current;
+        }
+    }
+    public void display(){
+        Node n=head;
+        while (n!=null){
+            System.out.print(n.data +"->");
+            n=n.next;
+        }
+        if (head!=null){
+            System.out.print("null");
+        }
+    }
+    public void length(){
+        if (head==null){
+            System.out.println("LinkedList is null");
+            return;
+        }
+        Node current=head;
+        int count=0;
+        while (current!=null){
+            count++;
+            current=current.next;
+        }
+        System.out.println("Length " +count);
+    }
+    public static void main(String[] args){
+        LinkedList lst=new LinkedList();
+        lst.insertAtFront(34);
+        lst.insertAtEnd(35);
+        lst.insertAtFront(32);
+        lst.insertAtPosition(2,33);
+        lst.length();
+        lst.display();
+    }
+}
+
+
+
+
+
+
+
+
+

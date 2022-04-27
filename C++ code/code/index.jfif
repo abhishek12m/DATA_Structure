@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>this is a paragrapgh</h1>
+  <!-- small paragraph -->
+  <p>thus is a parag</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium eius reiciendis, quaerat, illo voluptates ipsum sed hic nulla repudiandae sunt dolore dolorem sit atque ratione dolores sequi officia quasi voluptas.</p>
+  <img src="Abhishek.jpg" alt="Anaya image">
+</body>

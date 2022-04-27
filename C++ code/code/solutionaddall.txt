@@ -1,0 +1,58 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+
+class Solution {
+    public static void main(String[] args) {
+        ArrayList<Integer > integers = new ArrayList<>();
+        integers.add(45);
+        Integer obj = Integer.valueOf(33);
+        integers.add(obj);
+        integers.add(234);
+        integers.add(236);
+        integers.add(238);
+        integers.add(239);
+        integers.add(237);
+        integers.add(238);
+        integers.add(237);
+        integers.add(236);
+        integers.add(234);
+        integers.add(230);
+        System.out.println("Printing arraylist :");
+        System.out.println(integers);
+        System.out.println("by Enhanced for loop :");
+        for(Integer integer : integers){
+            int no = integer.intValue();
+            System.out.println(no);
+        }
+        System.out.println("by normal for loop :");
+        for (int i = 0; i < integers.size(); i++) {
+            int no = integers.get(i);
+            System.out.println(no);
+        }
+        HashSet<Integer > integerHashSet = new HashSet<>();
+        integerHashSet.add(453);
+        integerHashSet.add(454);
+        integerHashSet.add(455);
+        integerHashSet.add(456);
+        integerHashSet.add(457);
+        integerHashSet.add(458);
+        integerHashSet.add(452);
+        integerHashSet.add(451);
+        integerHashSet.add(450);
+        System.out.println("Printing set :");
+        System.out.println(integerHashSet);
+        for(Integer integer : integerHashSet){
+            System.out.println(integerHashSet);
+        }
+        integers.addAll(integerHashSet);
+        System.out.println("List with added set :");
+        System.out.println(integers);
+        integerHashSet.addAll(integers);
+        System.out.println("Set with added list :");
+        System.out.println(integerHashSet);
+        Iterator<Integer > iterator = integerHashSet.iterator();
+        System.out.println(iterator.next().getClass());
+    }
+
+}

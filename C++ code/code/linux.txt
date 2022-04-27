@@ -1,0 +1,82 @@
+Write a shell script to display current date in a particular format, number of users
+currently login and current month’s calendar.
+
+
+
+echo "Today is $(date)"
+echo ""
+echo "Calender :"
+cal
+echo "Number of users logged : $(who | wc -l)"
+include <stdio.h>
+include <sys/types.h>
+include <unistd.h>
+
+b. Write a shell script to display the process name and its process id.
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+int main(void)
+{
+	//variable to store calling function's process id
+	pid_t process_id;
+	//variable to store parent function's process id
+	pid_t p_process_id;
+
+	//getpid() - will return process id of calling function
+	process_id = getpid();
+	//getppid() - will return process id of parent function
+	p_process_id = getppid();
+
+	//printing the process ids
+	printf("The process id: %d\n",process_id);
+	printf("The process id of parent function: %d\n",p_process_id);
+
+	return 0;
+}
+
+
+
+c. Write a shell script to take name as a input and display a greeting message to the
+user by checking system clock. (Ex :- Hello John Good Morning in morning time else
+Hello John Good Afternoon in afternoon time else Hello John Good Evening in
+Evening time)
+hour=$(date +%H)
+if [[ $hour -lt 12 ]]; then
+    echo "Hello John Good Morning"
+    elif [[ $hour -lt 16 ]]; then
+        echo "Hello John Afternoon"
+        else
+        echo "Hello John Good Evening"
+fi
+
+d. Write a shell script to merge the content of 2 files into one file.
+
+fibnacci
+
+echo "Enter the number"
+read number
+a=0
+b=1
+for((i=0;i<=number;i++))
+do
+echo $a
+c=$(($a + $b))
+a=$b
+b=$c
+done
+
+
+
+echo "Enter the number"
+read number
+rev=0
+a=0
+while [ $number -gt 0 ]
+do
+    a=$(($number % 10))
+    rev=$(($rev * 10 + $a))
+    number=$(($number / 10))
+done
+echo $rev

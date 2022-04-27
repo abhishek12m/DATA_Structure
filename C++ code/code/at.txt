@@ -1,0 +1,31 @@
+public class Interface {
+    void func()
+    {
+        System.out.println("This is a function");
+    }
+}
+class runnable extends Interface implements Runnable
+{
+    public void run()
+    {
+        try
+        {
+            for(int i=0;i<=10;i++)
+            {
+                System.out.println(i);
+                Thread.sleep(1000);
+                
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println("e");
+        }
+    }
+    public static void main(String [] args)
+    {
+        runnable obj = new runnable();
+        Thread th = new Thread(obj);
+        th.start();
+    }
+}
